@@ -1,0 +1,16 @@
+﻿@using SchoolManagerWebClient.Models
+@model StudentViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form action="/Student/Edit" method="post">
+    <p>First Name</p>
+    <input type="text" name="FirstName" class="form-control" value="@Model.FirstName" />
+    <p>Last Name</p>
+    <input type="text" name="LastName" class="form-control" value="@Model.LastName"/>
+    <input type="submit" value="Save Changes" class="btn btn-primary" />
+</form>

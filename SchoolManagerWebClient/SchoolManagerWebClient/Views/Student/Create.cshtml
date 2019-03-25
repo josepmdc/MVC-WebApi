@@ -1,0 +1,29 @@
+﻿@using SchoolManagerWebClient.Models
+@model List<SubjectViewModel>
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<form action="/Student/Create" method="post">
+    <p>First name</p>
+    <input type="text" name="FirstName" class="form-control" />
+    <p>Last name</p>
+    <input type="text" name="LastName" class="form-control" />
+    @{ 
+        if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <span>
+                    <input type="checkbox" value="@item.Id" class="checkbox" />
+                    @item.Title
+                </span>
+            }
+        }
+    }
+
+    <input type="submit" value="Save Student" class="btn btn-primary" />
+</form>
